@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background-color: black;
+  color: white;
+}
+.custom-grid, .custom-subgrid {
+  --max-content-width: 100%;
+  display: grid
+;
+  grid-template-columns: repeat(4, minmax(0, calc(25vw - 25px)));
+  grid-template-columns: repeat(var(--number-of-columns, 12), minmax(0, calc((100vw - var(--grid-margin-size, 40px)* 2 - var(--gutter-size, 40px)*(var(--number-of-columns) - 1)) / var(--number-of-columns, 12))));
+  grid-template-rows: auto;
+  width: 100%;
+  grid-column-gap: 20px;
+  grid-column-gap: var(--gutter-size, 20px);
+}
+.custom-grid {
+  padding-left: 20px;
+  padding-left: var(--grid-margin-size, 40px);
+  padding-right: 20px;
+  padding-right: var(--grid-margin-size, 40px);
+}
+
+.custom-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));  /* 确保每列都是等宽的 */
+  gap: 1rem;
+  width: 100%;
+}
+
+.pt-sans-regular {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pt-sans-bold {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.pt-sans-regular-italic {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.pt-sans-bold-italic {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.josefin-sans-regular {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.josefin-sans-bold {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-mono-regular {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.text-normal-case {
+  text-transform: none;
+}
+.w-shop {
+  width: 30rem;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
